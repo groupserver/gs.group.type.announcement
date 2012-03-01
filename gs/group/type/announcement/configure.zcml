@@ -5,6 +5,11 @@
   
   <interface interface=".interfaces.IGSAnnouncementGroup"
     type="zope.app.content.interfaces.IContentType" />
-
+  <adapter
+    name="Posting Member"
+    for="Products.CustomUserFolder.interfaces.IGSUserInfo 
+      .interfaces.IGSAnnouncementGroup"
+    provides="gs.group.member.canpost.interfaces.IGSCanPostRule" 
+    factory=".canpostrules.PostingMember"  />
 </configure>
 
