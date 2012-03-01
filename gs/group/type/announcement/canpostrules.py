@@ -7,43 +7,25 @@ class PostingMember(BaseRule):
     no posting members are specified then every member of this group
     is a posting member.'''
     weight = 90
-    def __init__(self, user, group):
-        BaseRule.__init__(self, user, group)
-        self.__checked = False
             
     def check(self):
-        if not self.__checked:
+        if not self.s['checked']:
             ml = self.mailingList
             postingMembers = ml.getProperty('posting_members', [])
             if postingMembers and (self.userInfo.id in postingMembers):
-                self.__canPost = True
-                self.__status = u'a posting member'
-                self.__statusNum = 0
+                self.s['canPost'] = True
+                self.s['status'] = u'a posting member'
+                self.s['statusNum'] = 0
             elif postingMembers and (self.userInfo.id not in postingMembers):
-                self.__canPost = False
-                self.__status = u'not a posting member'
-                self.__statusNum = self.weight
+                self.s['canPost'] = False
+                self.s['status'] = u'not a posting member'
+                self.s['statusNum'] = self.weight
             elif not(postingMembers):
-                self.__canPost = True
-                self.__status = u'a posting member, like everyone'
-                self.__statusNum = 0
+                self.s['canPost'] = True
+                self.s['status'] = u'a posting member, like everyone'
+                self.s['statusNum'] = 0
                 
-        assert type(self.__canPost) == bool
-        assert type(self.__status) == unicode
-        assert type(self.__statusNum) == int
-
-    @Lazy
-    def canPost(self):
-        self.check()
-        return self.__canPost
-    
-    @Lazy
-    def statusNum(self):
-        self.check()
-        return self.__statusNum
-
-    @Lazy
-    def status(self):
-        self.check()
-        return self.__status
+        assert type(self.s['canPost']) == bool
+        assert type(self.s['status']) == unicode
+        assert type(self.s['statusNum']) == int
 
