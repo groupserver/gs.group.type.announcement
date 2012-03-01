@@ -24,7 +24,9 @@ class PostingMember(BaseRule):
                 self.s['canPost'] = True
                 self.s['status'] = u'a posting member, like everyone'
                 self.s['statusNum'] = 0
-                
+            self.s['checked'] = True
+
+        assert self.s['checked']                
         assert type(self.s['canPost']) == bool
         assert type(self.s['status']) == unicode
         assert type(self.s['statusNum']) == int
