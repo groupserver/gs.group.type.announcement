@@ -1,6 +1,6 @@
 # coding=utf-8
-from gs.group.base.interfaces import IGSGroupMarker
+from gs.group.type.discussion.interfaces import IGSDiscussionGroup
 
-class IGSAnnouncementGroup(IGSGroupMarker):
+class IGSAnnouncementGroup(IGSDiscussionGroup):
     pass
 

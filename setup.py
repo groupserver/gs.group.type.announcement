@@ -32,7 +32,8 @@ setup(name='gs.group.type.announcement',
     zip_safe=False,
     install_requires=[
         'setuptools',
-        'gs.group.base',
+        'gs.group.type.discussion',
+        'gs.group.member.canpost',
         # -*- Extra requirements: -*-
     ],
     entry_points="""
