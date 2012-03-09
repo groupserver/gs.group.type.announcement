@@ -1,0 +1,12 @@
+<div id="gs-group-type-announcement-not-a-posting-member" 
+  class="gs-group-member-canpost-info">
+  <strong
+    tal:attributes="title string:Reason ${view/canPost/statusNum}">You 
+    cannot post</strong> 
+  because you are not a posting member of this announcement group.
+  Contact the manager of the group to discuss how to become a posting
+  member of 
+  <span class="group"
+    tal:content="view/groupInfo/name">this group</span>.
+</div><!--gs-group-type-announcement-not-a-posting-member-->
+

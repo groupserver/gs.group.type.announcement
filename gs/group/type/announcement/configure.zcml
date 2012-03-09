@@ -11,5 +11,10 @@
       .interfaces.IGSAnnouncementGroup"
     provides="gs.group.member.canpost.interfaces.IGSCanPostRule" 
     factory=".canpostrules.PostingMember"  />
+  <browser:viewlet name="gs-group-type-announcement-not-a-posting-member"
+    manager="gs.group.member.canpost.interfaces.ICanPostInfo"
+    template="browser/templates/notapostingmember.pt"
+    class=".canpostviewlets.NotAPostingMember"
+    permission="zope2.View" />
 </configure>
 
