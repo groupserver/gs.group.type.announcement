@@ -3,7 +3,7 @@
     <p id="gs-group-type-announcement-posts-loading" 
       class="loading-message">
       <img src="/++resource++anim/wait.gif"/> 
-      Loading the latest posts
+      Loading the posts
     </p><!--gs-group-type-announcement-posts-loading-->
     <div id="gs-group-type-announcement-posts-latest" 
       class="items-list">
@@ -15,6 +15,20 @@
         <button id="gs-group-type-announcement-posts-toolbar-next">Older</button>
       </span>
     </div><!--gs-group-messages-topics-toolbar-->
+    <div id="gs-group-type-announcement-posts-tasks">
+      <ul class="inline-list">
+        <li tal:condition="view/canPost/canPost">
+          <a href="messages/newTopic.html"><strong>Start</strong> a 
+            topic</a> using the Web</li>
+        <li><a href="messages/posts.html">The <strong>posts</strong> 
+            page</a></li>
+        <li><a type="application/atom+xml" class="alternateATOM"
+          tal:define="title string:Posts in ${view/groupInfo/name};
+            url string:/s/search.atom?t=0&amp;f=0&amp;p=1&amp;g=${view/groupInfo/id}"
+          tal:attributes="href url" href="#">Web feed</a></li>
+
+      </ul>
+    </div><!--gs-group-messages-posts-tasks-->
   </tal:block>  
   <tal:block condition="not:view/viewTopics">
     <!--We must be looking at a private group-->

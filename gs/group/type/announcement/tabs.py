@@ -16,4 +16,9 @@ class DoNothing(UserInfoTab):
 class PostsTab(UserInfoTab):
     def __init__(self, group, request, view, manager):
         UserInfoTab.__init__(self, group, request, view, manager)
-
+        
+    @Lazy
+    def canPost(self):
+        retval = getMultiAdapter((self.groupInfo.groupObj, self.userInfo), 
+                                  IGSPostingUser)
+        return retval
