@@ -1,0 +1,31 @@
+<div id="gs-group-type-announcement-posts">
+  <tal:block condition="view/viewTopics">
+    <p id="gs-group-type-announcement-posts-loading" style="display:none;">
+      <img style="margin:0px 0.69em 0px 0px;padding:0px;"
+        src="/++resource++anim/wait.gif"/> 
+      Loading the latest posts
+    </p><!--gs-group-type-announcement-posts-loading-->
+    <div id="gs-group-type-announcement-posts-latest" 
+      style="display:none;">
+      &#160;
+    </div><!--gs-group-type-announcement-posts-latest-->
+    <div id="gs-group-type-announcement-posts-toolbar">
+      <span class="ui-widget-header ui-corner-all"
+        style="padding: 0.692em;">
+        <button id="gs-group-type-announcement-posts-toolbar-prev">Newer</button>
+        <button id="gs-group-type-announcement-posts-toolbar-next">Older</button>
+      </span>
+    </div><!--gs-group-messages-topics-toolbar-->
+  </tal:block>  
+  <tal:block condition="not:view/viewTopics">
+    <!--We must be looking at a private group-->
+    <p>
+      You must be a logged in member of 
+      <span class="group" tal:content="view/groupInfo/name">this group</span>
+      to view the posts.
+      <!--a tal:attributes="href string:/login.html?came_from=${view/groupInfo/url}"
+        href="#"><strong>Login</strong> if you are already a 
+        member.</a-->
+    </p>
+  </tal:block>  
+</div><!--gs-group-type-announcement-posts-->
