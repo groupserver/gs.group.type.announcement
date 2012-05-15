@@ -13,12 +13,7 @@ class DoNothing(UserInfoTab):
     def show(self):
         return False
 
-class PostsSummaryTab(UserInfoTab):
+class PostsTab(UserInfoTab):
     def __init__(self, group, request, view, manager):
         UserInfoTab.__init__(self, group, request, view, manager)
-            
-    @Lazy
-    def show(self):
-        return False
-
 

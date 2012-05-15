@@ -50,6 +50,28 @@
     permission="zope2.Public"
     weight="20"
     title="Posts Script" />
-    
+  
+  <!-- The *actual* Posts tab for announcement groups! -->
+  <browser:viewlet name="gs-group-type-announcement-posts-tab"
+    for=".interfaces.IGSAnnouncementGroup"
+    manager="gs.group.home.interfaces.IGroupHomepageTasks"
+    class=".tabs.PostsTab"
+    template="browser/templates/poststab.pt"
+    permission="zope2.View"
+    weight="10"
+    title="Posts" />
+  <browser:viewlet name="gs-group-type-announcement-posts-script"
+    for=".interfaces.IGSAnnouncementGroup"
+    manager="gs.group.home.interfaces.IGroupHomepageScripts"
+    class=".tabs.PostsTab"
+    template="browser/templates/poststabscript.pt"
+    permission="zope2.View"
+    weight="10"
+    title="Posts Script" />
+  <browser:resource 
+    name="gs-group-type-announcement-posts-js-20120515.js"
+    file="browser/javascript/posts.js"
+    permission="zope2.Public" />
+
 </configure>
 
