@@ -18,14 +18,38 @@
     class=".canpostviewlets.NotAPostingMember"
     permission="zope2.View" />
 
-  <!-- The slight variant of the Task tabs -->
+  <!-- Hide the Topics tab -->
   <browser:viewlet name="gs-group-messages-topics-tab"
     for=".interfaces.IGSAnnouncementGroup"
     manager="gs.group.home.interfaces.IGroupHomepageTasks"
-    class=".tabs.TopicsTab"
+    class=".tabs.DoNothing"
     permission="zope2.Public"
     weight="10"
     title="Topics" />
+  <!-- Hide the Topics script -->
+  <browser:viewlet name="gs-group-messages-topics-script"
+    for=".interfaces.IGSAnnouncementGroup"
+    manager="gs.group.home.interfaces.IGroupHomepageScripts"
+    class=".tabs.DoNothing"
+    permission="zope2.Public"
+    weight="10"
+    title="Topics" />
+  <!-- Hide the Posts tab -->
+  <browser:viewlet name="gs-group-messages-posts-tab"
+    for=".interfaces.IGSAnnouncementGroup"
+    manager="gs.group.home.interfaces.IGroupHomepageTasks"
+    class=".tabs.DoNothing"
+    permission="zope2.Public"
+    weight="20"
+    title="Posts" />
+  <!-- Hide the Posts script -->
+  <browser:viewlet name="gs-group-messages-posts-script"
+    for=".interfaces.IGSAnnouncementGroup"
+    manager="gs.group.home.interfaces.IGroupHomepageScripts"
+    class=".tabs.DoNothing"
+    permission="zope2.Public"
+    weight="20"
+    title="Posts Script" />
     
 </configure>
 
