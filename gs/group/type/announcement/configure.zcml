@@ -12,9 +12,20 @@
     provides="gs.group.member.canpost.interfaces.IGSCanPostRule" 
     factory=".canpostrules.PostingMember"  />
   <browser:viewlet name="gs-group-type-announcement-not-a-posting-member"
+    for=".interfaces.IGSAnnouncementGroup"
     manager="gs.group.member.canpost.interfaces.ICanPostInfo"
     template="browser/templates/notapostingmember.pt"
     class=".canpostviewlets.NotAPostingMember"
     permission="zope2.View" />
+
+  <!-- The slight variant of the Task tabs -->
+  <browser:viewlet name="gs-group-messages-topics-tab"
+    for=".interfaces.IGSAnnouncementGroup"
+    manager="gs.group.home.interfaces.IGroupHomepageTasks"
+    class=".tabs.TopicsTab"
+    permission="zope2.Public"
+    weight="10"
+    title="Topics" />
+    
 </configure>
 
