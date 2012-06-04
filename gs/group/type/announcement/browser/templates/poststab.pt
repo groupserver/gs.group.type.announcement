@@ -1,20 +1,28 @@
-<div id="gs-group-type-announcement-posts">
-  <tal:block condition="view/viewTopics">
+<tal:block>
+  <div id="gs-group-type-announcement-posts" class="gs-search search"
+       tal:condition="view/viewTopics">
+    <div class="gs-search-entry">
+      <input type="text" class="textEntry"/>
+      <button>Search</button>
+    </div>
     <p id="gs-group-type-announcement-posts-loading" 
-      class="loading-message">
+      class="gs-search-loading">
       <img src="/++resource++anim/wait.gif"/> 
       Loading the posts
     </p><!--gs-group-type-announcement-posts-loading-->
     <div id="gs-group-type-announcement-posts-latest" 
-      class="items-list">
+      class="items-list gs-search-results">
       &#160;
     </div><!--gs-group-type-announcement-posts-latest-->
-    <div id="gs-group-type-announcement-posts-toolbar" class="toolbar">
+    <div id="gs-group-type-announcement-posts-toolbar" 
+	 class="gs-search-toolbar toolbar">
       <span class="ui-widget-header ui-corner-all">
-        <button id="gs-group-type-announcement-posts-toolbar-prev">Newer</button>
-        <button id="gs-group-type-announcement-posts-toolbar-next">Older</button>
+        <button class="gs-search-toolbar-previous"
+	  id="gs-group-type-announcement-posts-toolbar-prev">Newer</button>
+        <button class="gs-search-toolbar-next"
+	  id="gs-group-type-announcement-posts-toolbar-next">Older</button>
       </span>
-    </div><!--gs-group-messages-topics-toolbar-->
+    </div><!--gs-group-type-announcement-posts-toolbar-->
     <div id="gs-group-type-announcement-posts-tasks">
       <ul class="inline-list">
         <li tal:condition="view/canPost/canPost">
@@ -23,15 +31,15 @@
         <li><a href="messages/posts.html">The <strong>posts</strong> 
             page</a></li>
         <li><a type="application/atom+xml" class="alternateATOM"
-          tal:define="title string:Posts in ${view/groupInfo/name};
-            url string:/s/search.atom?t=0&amp;f=0&amp;p=1&amp;g=${view/groupInfo/id}"
-          tal:attributes="href url" href="#">Web feed</a></li>
+	       tal:define="title string:Posts in ${view/groupInfo/name};
+			   url string:/s/search.atom?t=0&amp;f=0&amp;p=1&amp;g=${view/groupInfo/id}"
+	       tal:attributes="href url" href="#">Web feed</a></li>
 
       </ul>
-    </div><!--gs-group-messages-posts-tasks-->
-  </tal:block>  
-  <tal:block condition="not:view/viewTopics">
-    <!--We must be looking at a private group-->
+    </div><!--gs-group-type-announcement-posts-tasks-->
+  </div><!--gs-group-type-announcement-posts-->
+  <div id="gs-group-type-announcement-posts-private"
+       tal:condition="not:view/viewTopics">
     <p>
       You must be a logged in member of 
       <span class="group" tal:content="view/groupInfo/name">this group</span>
@@ -40,5 +48,5 @@
         href="#"><strong>Login</strong> if you are already a 
         member.</a-->
     </p>
-  </tal:block>  
-</div><!--gs-group-type-announcement-posts-->
+  </div><!--gs-group-type-announcement-posts-private-->
+</tal:block>  
