@@ -32,8 +32,12 @@ setup(name='gs.group.type.announcement',
     zip_safe=False,
     install_requires=[
         'setuptools',
-        'gs.group.type.discussion',
+        'gs.content.js.jquery',        
+        'gs.group.home',
         'gs.group.member.canpost',
+        'gs.group.messages.base',
+        'gs.group.type.discussion',
+        'Products.GSGroup',
         # -*- Extra requirements: -*-
     ],
     entry_points="""
