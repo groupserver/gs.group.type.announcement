@@ -69,7 +69,7 @@
     weight="10"
     title="Posts Script" />
   <browser:resource 
-    name="gs-group-type-announcement-posts-js-20120515.js"
+    name="gs-group-type-announcement-posts-js-20120606.js"
     file="browser/javascript/posts.js"
     permission="zope2.Public" />
 
