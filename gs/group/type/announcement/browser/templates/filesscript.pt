@@ -1,8 +1,7 @@
-<div id="gs-group-type-announcement-files-script"
-     tal:condition="view/viewTopics">
-  <script type="text/javascript"
-	  src="/++resource++search-20120601.js">&#160;</script>
-    <script type="text/javascript"
-	  src="/++resource++gs-group-type-announcement-files-js-20120604.js">&#160;</script>
-</div>
+<script 
+  id="gs-group-type-announcement-files-script"
+  src="/++resource++gs-group-type-announcement-files-js-20120604.js"
+  type="text/javascript">
+  &#160;
+</script><!--gs-group-type-announcement-files-script-->
 
