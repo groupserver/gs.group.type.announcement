@@ -16,7 +16,7 @@
     manager="gs.group.member.canpost.interfaces.ICanPostInfo"
     template="browser/templates/notapostingmember.pt"
     class=".canpostviewlets.NotAPostingMember"
-    permission="zope2.View" />
+    permission="zope.Public" />
 
   <!-- Hide the Topics tab -->
   <browser:viewlet name="gs-group-messages-topics-tab"
