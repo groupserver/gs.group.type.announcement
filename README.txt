@@ -41,7 +41,7 @@ interface has the following inheritance tree::
   gs.group.type.discussion.interfaces.IGSDiscussionGroup
       △
       │
-  gs.group.type.announcement.interfacesIGSAnnouncementGroup
+  gs.group.type.announcement.interfaces.IGSAnnouncementGroup
 
 Resources
 =========
