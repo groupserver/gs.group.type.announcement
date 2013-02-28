@@ -27,12 +27,12 @@ setup(name='gs.group.type.announcement',
     url='http://groupserver.org',
     license='ZPL',
     packages=find_packages(exclude=['ez_setup']),
-    namespace_packages=['gs', 'gs.group', 'gs.group.type',],
+    namespace_packages=['gs', 'gs.group', 'gs.group.type', ],
     include_package_data=True,
     zip_safe=False,
     install_requires=[
         'setuptools',
-        'gs.content.js.jquery',        
+        'gs.content.js.jquery',
         'gs.group.home',
         'gs.group.member.canpost',
         'gs.group.messages.base',
@@ -44,4 +44,3 @@ setup(name='gs.group.type.announcement',
     # -*- Entry points: -*-
     """,
 )
-
