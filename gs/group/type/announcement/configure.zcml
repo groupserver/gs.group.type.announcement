@@ -21,7 +21,7 @@
   <!-- Hide the Topics tab -->
   <browser:viewlet name="gs-group-messages-topics-tab"
     for=".interfaces.IGSAnnouncementGroup"
-    manager="gs.group.home.interfaces.IGroupHomepageTasks"
+    manager="gs.group.messages.base.interfaces.IGroupHomepageMessages"
     class=".tabs.DoNothing"
     permission="zope2.Public"
     weight="10"
@@ -37,7 +37,7 @@
   <!-- Hide the Posts tab -->
   <browser:viewlet name="gs-group-messages-posts-tab"
     for=".interfaces.IGSAnnouncementGroup"
-    manager="gs.group.home.interfaces.IGroupHomepageTasks"
+    manager="gs.group.messages.base.interfaces.IGroupHomepageMessages"
     class=".tabs.DoNothing"
     permission="zope2.Public"
     weight="20"
@@ -52,9 +52,10 @@
     title="Posts Script" />
   
   <!-- The *actual* Posts tab for announcement groups! -->
-  <browser:viewlet name="gs-group-type-announcement-posts-tab"
+  <browser:viewlet 
+    name="gs-group-type-announcement-posts-tab"
     for=".interfaces.IGSAnnouncementGroup"
-    manager="gs.group.home.interfaces.IGroupHomepageTasks"
+    manager="gs.group.messages.base.interfaces.IGroupHomepageMessages"
     class=".tabs.PostsTab"
     template="browser/templates/poststab.pt"
     permission="zope2.View"
