@@ -1,5 +1,6 @@
 jQuery.noConflict();
-jQuery(document).ready( function () {
+
+function gs_group_type_announcement_posts() {
     // HACK to get the group ID for the AJAX.
     var bodyId = null;
     var gId = null;
@@ -13,4 +14,9 @@ jQuery(document).ready( function () {
                            '/s/search.ajax', 0, 6, 
                            {'t': '0', 'p': '1', 'g': gId}, null);
     postsSearch.load();
+}
+
+jQuery(document).ready( function () {
+    gsJsLoader.with_module('/++resource++gs-search-base-js-min-20121217.js', 
+                           gs_group_type_announcement_posts);
 });
