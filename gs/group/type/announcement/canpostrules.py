@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 from gs.group.member.canpost.rules import BaseRule
 
 

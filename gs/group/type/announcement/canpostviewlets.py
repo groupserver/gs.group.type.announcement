@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 from zope.cachedescriptors.property import Lazy
 from gs.group.member.canpost import RuleViewlet
 from canpostrules import PostingMember
