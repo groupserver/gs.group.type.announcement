@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 import os
 from setuptools import setup, find_packages
 from version import get_version
@@ -32,13 +32,14 @@ setup(name='gs.group.type.announcement',
     zip_safe=False,
     install_requires=[
         'setuptools',
+        'zope.cachedescriptors',
+        'zope.component',
         'gs.content.js.jquery',
         'gs.group.home',
         'gs.group.member.canpost',
         'gs.group.messages.base',
         'gs.group.type.discussion',
         'Products.GSGroup',
-        # -*- Extra requirements: -*-
     ],
     entry_points="""
     # -*- Entry points: -*-

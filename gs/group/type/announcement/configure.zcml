@@ -77,25 +77,5 @@
     name="gs-group-type-announcement-posts-js-min-20120606.js"
     file="browser/javascript/posts-min.js"
     permission="zope2.Public" />
-
-  <browser:viewlet name="gs-group-messages-files-script"
-    for=".interfaces.IGSAnnouncementGroup"
-    manager="gs.group.home.interfaces.IGroupHomepageScripts"
-    class=".tabs.DoNothing"
-    permission="zope2.Public"
-    weight="30"
-    title="Files Script" />
-  <browser:viewlet name="gs-group-type-announcement-files-script"
-    for=".interfaces.IGSAnnouncementGroup"
-    manager="gs.group.home.interfaces.IGroupHomepageScripts"
-    class=".tabs.PostsTab"
-    template="browser/templates/filesscript.pt"
-    permission="zope2.Public"
-    weight="30"
-    title="Files Script" />
-  <browser:resource 
-    name="gs-group-type-announcement-files-js-20120604.js"
-    file="browser/javascript/files.js"
-    permission="zope2.Public" />
 </configure>
 
