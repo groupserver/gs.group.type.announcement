@@ -2,10 +2,7 @@ jQuery.noConflict();
 
 function gs_group_type_announcement_posts() {
     // HACK to get the group ID for the AJAX.
-    var bodyId = null;
-    var gId = null;
-    var e = /_.*$/;
-    var postsSearch = null;
+    var bodyId = null, gId = null, e = /_.*$/,  postsSearch = null;
 
     bodyId = jQuery('body').attr('id');
     gId = String(e.exec(bodyId)).slice(1);
