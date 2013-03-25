@@ -73,6 +73,10 @@
     name="gs-group-type-announcement-posts-js-20120606.js"
     file="browser/javascript/posts.js"
     permission="zope2.Public" />
+  <browser:resource 
+    name="gs-group-type-announcement-posts-js-min-20120606.js"
+    file="browser/javascript/posts-min.js"
+    permission="zope2.Public" />
 
   <browser:viewlet name="gs-group-messages-files-script"
     for=".interfaces.IGSAnnouncementGroup"
