@@ -19,7 +19,8 @@
     permission="zope.Public" />
 
   <!-- Hide the Topics tab -->
-  <browser:viewlet name="gs-group-messages-topics-tab"
+  <browser:viewlet 
+    name="gs-group-messages-topics-tab"
     for=".interfaces.IGSAnnouncementGroup"
     manager="gs.group.messages.base.interfaces.IGroupHomepageMessages"
     class=".tabs.DoNothing"
@@ -27,7 +28,8 @@
     weight="10"
     title="Topics" />
   <!-- Hide the Topics script -->
-  <browser:viewlet name="gs-group-messages-topics-script"
+  <browser:viewlet 
+    name="gs-group-messages-topics-tab-script"
     for=".interfaces.IGSAnnouncementGroup"
     manager="gs.group.home.interfaces.IGroupHomepageScripts"
     class=".tabs.DoNothing"
