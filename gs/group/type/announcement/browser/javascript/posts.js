@@ -11,6 +11,7 @@ function gs_group_type_announcement_posts() {
                            '/s/search.ajax', 0, 6, 
                            {'t': '0', 'p': '1', 'g': gId}, null);
     postsSearch.load();
+    jQuery('#gs-group-messages-base-tabs-buttons li:first-child a').click();
 }
 
 jQuery(document).ready( function () {
