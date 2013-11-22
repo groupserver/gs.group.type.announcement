@@ -1,4 +1,17 @@
 # -*- coding: utf-8 -*-
+##############################################################################
+#
+# Copyright © 2013 OnlineGroups.net and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
 import os
 from setuptools import setup, find_packages
 from version import get_version
@@ -21,7 +34,7 @@ setup(name='gs.group.type.announcement',
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    keywords='user, group, page',
+    keywords='group announcement posts topics canpost',
     author='Michael JasonSmith',
     author_email='mpj17@onlinegroups.net',
     url='http://groupserver.org',
@@ -34,6 +47,10 @@ setup(name='gs.group.type.announcement',
         'setuptools',
         'zope.cachedescriptors',
         'zope.component',
+        'zope.browserpage',
+        'zope.browserresource',
+        'zope.tal',
+        'zope.tales',
         'gs.content.js.jquery.base',
         'gs.group.home',
         'gs.group.member.canpost',
