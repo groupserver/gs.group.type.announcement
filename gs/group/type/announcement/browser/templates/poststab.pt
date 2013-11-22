@@ -1,11 +1,11 @@
 <div id="gs-group-type-announcement-posts">
-  <div id="gs-group-type-announcement-posts-search" 
+  <div id="gs-group-type-announcement-posts-search"
        class="gs-search search" role="application"
        tal:condition="view/viewTopics">
     <div id="gs-group-type-announcement-posts-search-form"
          class="form-inline">
       <div class="gs-search-entry search input-append"
-           role="search" 
+           role="search"
            aria-controls="gs-group-type-announcement-posts-latest">
         <input type="search" name="s" placeholder="Search within posts&#8230;"
                autocomplete="on" value="" title="Search within posts"
@@ -18,12 +18,12 @@
          href="messages/newTopic.html"><span class="muted">&#10010;</span>
          <strong>New post</strong></a>
     </div><!--gs-group-type-announcement-posts-search-form-->
-    <p id="gs-group-type-announcement-posts-loading" 
+    <p id="gs-group-type-announcement-posts-loading"
       class="gs-search-loading">
-      <img src="/++resource++anim/wait.gif"/> 
+      <img src="/++resource++anim/wait.gif"/>
       Loading the posts&#8230;
     </p><!--gs-group-type-announcement-posts-loading-->
-    <div id="gs-group-type-announcement-posts-latest" 
+    <div id="gs-group-type-announcement-posts-latest"
       class="items-list gs-search-results">
       &#160;
     </div><!--gs-group-type-announcement-posts-latest-->
@@ -33,7 +33,7 @@
               aria-controls="gs-group-type-announcement-posts-latest"
               aria-flowto="gs-group-type-announcement-posts-toolbar-next"
               class="btn gs-search-toolbar-previous">Newer</button>
-      <ul id="gs-group-type-announcement-posts-toolbar-navigation" 
+      <ul id="gs-group-type-announcement-posts-toolbar-navigation"
           class="dotted-inline-list" role="navigation">
         <li><a href="messages/posts.html">All posts</a></li>
         <li><a type="application/atom+xml" class="alternateATOM"
@@ -54,11 +54,11 @@
   <div id="gs-group-type-announcement-posts-private"
        tal:condition="not:view/viewTopics">
     <p>
-      You must be a logged in member of 
+      You must be a logged in member of
       <span class="group" tal:content="view/groupInfo/name">this group</span>
       to view the posts.
       <!--a tal:attributes="href string:/login.html?came_from=${view/groupInfo/url}"
-        href="#"><strong>Login</strong> if you are already a 
+        href="#"><strong>Login</strong> if you are already a
         member.</a-->
     </p>
   </div><!--gs-group-type-announcement-posts-private-->
