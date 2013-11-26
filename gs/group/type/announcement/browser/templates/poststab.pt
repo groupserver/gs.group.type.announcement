@@ -20,7 +20,7 @@
     </div><!--gs-group-type-announcement-posts-search-form-->
     <p id="gs-group-type-announcement-posts-loading"
       class="gs-search-loading">
-      <img src="/++resource++anim/wait.gif"/>
+      <span data-icon="&#xe619;" aria-hidden="true" class="loading"> </span>
       Loading the posts&#8230;
     </p><!--gs-group-type-announcement-posts-loading-->
     <div id="gs-group-type-announcement-posts-latest"
