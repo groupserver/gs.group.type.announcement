@@ -1,4 +1,7 @@
-// Copyright © 2013 OnlineGroups.net and Contributors.
+"use strict";
+// Posts list for an announcement group
+//
+// Copyright © 2013, 2014 OnlineGroups.net and Contributors.
 // All Rights Reserved.
 //
 // This software is subject to the provisions of the Zope Public License,
@@ -20,6 +23,6 @@ function gs_group_type_announcement_posts() {
 }
 
 jQuery(document).ready( function () {
-    gsJsLoader.with_module('/++resource++gs-search-base-js-min-20131121.js', 
+    gsJsLoader.with_module('/++resource++gs-search-base-js-min-20140313.js', 
                            gs_group_type_announcement_posts);
 });
