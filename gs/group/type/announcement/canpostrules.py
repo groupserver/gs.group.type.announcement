@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-# Copyright © 2013 OnlineGroups.net and Contributors.
+# Copyright © 2013, 2014 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -12,11 +12,12 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
+from __future__ import absolute_import, unicode_literals
 from gs.group.member.canpost.rules import BaseRule
 
 
 class PostingMember(BaseRule):
-    u'''Only a select few members can post to this group. If
+    '''Only a select few members can post to this group. If
     no posting members are specified then every member of this group
     is a posting member.'''
     weight = 90
@@ -27,15 +28,15 @@ class PostingMember(BaseRule):
             postingMembers = ml.getProperty('posting_members', [])
             if postingMembers and (self.userInfo.id in postingMembers):
                 self.s['canPost'] = True
-                self.s['status'] = u'a posting member'
+                self.s['status'] = 'a posting member'
                 self.s['statusNum'] = 0
             elif postingMembers and (self.userInfo.id not in postingMembers):
                 self.s['canPost'] = False
-                self.s['status'] = u'not a posting member'
+                self.s['status'] = 'not a posting member'
                 self.s['statusNum'] = self.weight
             elif not(postingMembers):
                 self.s['canPost'] = True
-                self.s['status'] = u'a posting member, like everyone'
+                self.s['status'] = 'a posting member, like everyone'
                 self.s['statusNum'] = 0
             self.s['checked'] = True
 
