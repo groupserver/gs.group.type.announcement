@@ -103,5 +103,16 @@
     permission="zope2.View"
     weight="50"
     title="All" />
+  <!-- Overriding the Recently active box on the Group page, so it  -->
+  <!-- drops the "All members" link. -->
+  <browser:viewlet
+    name="gs-group-member-active-list"
+    for=".interfaces.IGSAnnouncementGroup"
+    manager="gs.group.home.interfaces.IGroupHomepageSecondary"
+    class="gs.group.member.active.viewlet.ActiveMembersViewlet"
+    template="browser/templates/recently_active.pt"
+    permission="zope2.View"
+    weight="20"
+    title="Active members" />
 
 </configure>
