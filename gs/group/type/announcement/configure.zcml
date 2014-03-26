@@ -92,4 +92,16 @@
     name="gs-group-type-announcement-posts-js-min-20140314.js"
     file="browser/javascript/posts-min.js"
     permission="zope2.Public" />
+
+  <!-- Over riding the All Members tab on the Members page -->
+  <browser:viewlet
+    name="gs-group-home-members"
+    for=".interfaces.IGSAnnouncementGroup"
+    manager="gs.group.member.list.interfaces.IMemberList"
+    class=".members.AnnouncementAllMembersList"
+    template="browser/templates/all.pt"
+    permission="zope2.View"
+    weight="50"
+    title="All" />
+
 </configure>
