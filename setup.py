@@ -68,6 +68,7 @@ setup(name=name,
           'gs.group.member.viewlet',
           'gs.group.messages.base',
           'gs.group.type.discussion',
+          'gs.group.type.set',
           'Products.GSGroup',
       ],
       entry_points="""
