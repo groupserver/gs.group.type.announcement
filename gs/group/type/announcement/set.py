@@ -19,7 +19,6 @@ from gs.group.type.set import (SetABC, UnsetABC)
 class SetAnnouncementGroup(SetABC):
     'Set a group folder to be an announcement group'
     name = 'Announcement group'
-    typeId = 'gs-group-type-announcement-set'
     weight = 20
     show = True
 
@@ -47,6 +46,7 @@ class SetAnnouncementGroup(SetABC):
 
 class UnsetAnnouncementGroup(UnsetABC):
     name = 'Announcement group'
+    setTypeId = 'gs-group-type-announcement-set'
 
     def unset(self):
         self.unset_marker()
