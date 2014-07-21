@@ -18,7 +18,7 @@ from gs.group.type.set import (SetABC, UnsetABC)
 
 class SetAnnouncementGroup(SetABC):
     'Set a group folder to be an announcement group'
-    name = 'Announcement group'
+    name = 'Announcement group: only “posting members” can post'
     weight = 20
     show = True
 
