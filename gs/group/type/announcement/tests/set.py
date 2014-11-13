@@ -15,7 +15,7 @@
 from __future__ import absolute_import, unicode_literals
 from mock import MagicMock, patch
 from unittest import TestCase
-from gs.group.type.announcement.set import SetAnnouncementGroup
+from gs.group.type.announcement.set import SetAnnouncementGroup, INTERFACES
 
 
 class TestSet(TestCase):
@@ -74,3 +74,4 @@ exists'''
         sag.set()
 
         slp.assert_called_once_with('replyto', 'sender')
+        am.assert_called_once_with(g, INTERFACES)

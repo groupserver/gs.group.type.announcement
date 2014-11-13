@@ -15,6 +15,7 @@
 from __future__ import absolute_import, unicode_literals
 from gs.group.type.set import (SetABC, UnsetABC)
 from Products.GSGroup.interfaces import IGSGroupInfo
+INTERFACES = ['gs.group.type.announcement.interfaces.IGSAnnouncementGroup']
 
 
 class SetAnnouncementGroup(SetABC):
@@ -31,9 +32,7 @@ class SetAnnouncementGroup(SetABC):
     def set_marker(self):
         '''Add the marker-interface to make the group into a discussion
         group.'''
-        iFaces = [
-            'gs.group.type.announcement.interfaces.IGSAnnouncementGroup']
-        self.add_marker(self.group, iFaces)
+        self.add_marker(self.group, INTERFACES)
 
     def set_default_posting_members(self):
         siteRoot = self.group.site_root()
@@ -59,6 +58,4 @@ class UnsetAnnouncementGroup(UnsetABC):
         # Leave the posting_members property alone
 
     def unset_marker(self):
-        iFaces = [
-            'gs.group.type.announcement.interfaces.IGSAnnouncementGroup']
-        self.del_marker(self.group, iFaces)
+        self.del_marker(self.group, INTERFACES)
