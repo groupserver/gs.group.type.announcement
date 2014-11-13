@@ -71,6 +71,8 @@ setup(name=name,
           'gs.group.type.set',
           'Products.GSGroup',
       ],
+      test_suite="gs.group.type.announcement.tests.test_all",
+      tests_require=['mock', ],
       entry_points="""
           # -*- Entry points: -*-
       """,)
