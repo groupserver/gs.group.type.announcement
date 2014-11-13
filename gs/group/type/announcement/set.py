@@ -39,7 +39,7 @@ class SetAnnouncementGroup(SetABC):
         siteRoot = self.group.site_root()
         listManager = getattr(siteRoot, 'ListManager')
         mailingList = getattr(listManager, self.group.getId())
-        if mailingList.hasProperty('posting_members'):
+        if not mailingList.hasProperty('posting_members'):
             self.set_admins_as_posting_members()
 
     def set_admins_as_posting_members(self):
