@@ -1,6 +1,14 @@
 Changelog
 =========
 
+4.0.1 (2014-09-17)
+------------------
+
+* Naming the reStructuredText files as such
+* Switching the primary repository to GitHub_
+
+.. _GitHub: https://github.com/groupserver/gs.group.type.announcement
+
 4.0.0 (2014-07-21)
 ------------------
 
