@@ -1,9 +1,11 @@
-<tal:block>
+<tal:block xmlns:tal="http://xml.zope.org/namespaces/tal"
+           xmlns:metal="http://xml.zope.org/namespaces/metal"
+           xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+           i18n:domain="gs.group.type.announcement">
   <div id="gs-group-type-announcement-members-all-admins" role="region"
        aria-labelledby="gs-group-type-announcement-members-all-admins-h">
-    <h2 id="gs-group-type-announcement-members-all-admins-h">
-      Administrators
-    </h2>
+    <h2 id="gs-group-type-announcement-members-all-admins-h"
+        i18n:translate="">Administrators</h2>
     <ul>
       <tal:block repeat="member view/admins">
         <li class="vcard">
@@ -27,9 +29,8 @@
   </div><!--gs-group-type-announcement-members-all-admins-->
   <div id="gs-group-type-announcement-members-all-normal" role="region"
        aria-labelledby="gs-group-type-announcement-members-all-normal-h">
-    <h2 id="gs-group-type-announcement-members-all-normal-h">
-      Normal members
-    </h2>
+    <h2 id="gs-group-type-announcement-members-all-normal-h"
+        i18n:translate="">Normal members</h2>
     <ul tal:condition="python:view.isMember or view.visibility.isPublic">
       <tal:block repeat="member view/normalMembers">
         <li class="vcard">
@@ -46,19 +47,20 @@
         </li>
       </tal:block>
     </ul>
-    <p tal:condition="python:not(view.isMember or view.visibility.isPublic)">
+    <p tal:condition="python:not(view.isMember or view.visibility.isPublic)"
+       i18n:translate="">
       You must be logged in to see the list of normal group members.
     </p>
   </div><!--gs-group-type-announcement-members-all-normal-->
   <div id="gs-group-type-announcement-members-all-invited" role="region"
        aria-labelledby="gs-group-type-announcement-members-all-invited-h"
        tal:condition="python:not(view.visibility.isPublic) and view.isMember">
-    <h2 id="gs-group-type-announcement-members-all-invited-h">
-      Invited members
-    </h2>
-    <p class="muted">
+    <h2 id="gs-group-type-announcement-members-all-invited-h"
+        i18n:translate="">Invited members</h2>
+    <p class="muted" i18n:translate="">
       The people that are yet to respond to the invitation to join
-      <span class="group" tal:content="view/groupInfo/name">this group</span>.
+      <span class="group" i18n:name="groupName"
+            tal:content="view/groupInfo/name">this group</span>.
     </p>
     <ul>
       <tal:block repeat="member view/invitedMembers">

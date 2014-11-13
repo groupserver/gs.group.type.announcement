@@ -1,4 +1,8 @@
-<div id="gs-group-type-announcement-posts">
+<div xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     i18n:domain="gs.group.type.announcement"
+     id="gs-group-type-announcement-posts">
   <div id="gs-group-type-announcement-posts-search"
        class="gs-search search" role="application"
        tal:condition="view/viewTopics">
@@ -9,28 +13,32 @@
            aria-controls="gs-group-type-announcement-posts-latest">
         <input type="search" name="s" placeholder="Search within posts&#8230;"
                autocomplete="on" value="" title="Search within posts"
-               id="gs-group-type-announcement-posts-search-input" />
+               id="gs-group-type-announcement-posts-search-input"
+               i18n:attributes="placeholder; title"/>
         <button id="gs-group-type-announcement-posts-search-button"
-                class="btn">Search</button>
+                class="btn" i18n:translate="">Search</button>
       </div><!--gs-search-entry-->
       <a id="gs-group-type-announcement-posts-form-new-topic" class="btn"
          tal:condition="view/canPost/canPost"
-         href="messages/newTopic.html"><span class="muted">&#10010;</span>
-         <strong>New post</strong></a>
+         href="messages/newTopic.html"
+         i18n:translate=""><span i18n:translate="new-icon"
+                                 class="muted">&#10010;</span>
+           <strong>New post</strong></a>
     </div><!--gs-group-type-announcement-posts-search-form-->
     <p id="gs-group-type-announcement-posts-loading"
-      class="gs-search-loading">
-      <span data-icon="&#xe619;" aria-hidden="true" class="loading"> </span>
+      class="gs-search-loading" i18n:translate="">
+      <span data-icon="&#xe619;" aria-hidden="true" class="loading"
+            i18n:name="loading-icon"> </span>
       Loading the posts&#8230;
     </p><!--gs-group-type-announcement-posts-loading-->
     <div id="gs-group-type-announcement-posts-latest"
       class="items-list gs-search-results">
       &#160;
     </div><!--gs-group-type-announcement-posts-latest-->
-    <p class="gs-search-failed">
+    <p class="gs-search-failed" i18n:translate="">
       No posts were found.
     </p><!--gs-search-failed-->
-    <p class="gs-search-empty muted">
+    <p class="gs-search-empty muted" i18n:translate="">
       People are yet to post to this group.
     </p><!--gs-search-empty-->
     <div id="gs-group-type-announcement-posts-toolbar" role="toolbar"
@@ -38,17 +46,20 @@
       <button id="gs-group-type-announcement-posts-toolbar-prev"
               aria-controls="gs-group-type-announcement-posts-latest"
               aria-flowto="gs-group-type-announcement-posts-toolbar-next"
-              class="btn gs-search-toolbar-previous">Newer</button>
+              class="btn gs-search-toolbar-previous"
+              i18n:translate="">Newer</button>
       <div id="gs-group-type-announcement-posts-toolbar-navigation"
            role="navigation">
         <ul class="dotted-inline-list">
-          <li><a href="messages/posts.html">All posts</a></li>
+          <li><a href="messages/posts.html"
+                 i18n:translate="">All posts</a></li>
           <li><a type="application/atom+xml" class="alternateATOM"
                  tal:define="title string:Posts in ${view/groupInfo/name};
                              url string:/s/search.atom?t=0&amp;f=0&amp;p=1&amp;g=${view/groupInfo/id}"
                  tal:attributes="href url" href="#">
             <span aria-hidden="true" data-icon="&#xe003;"></span>
-            <span class="screen-reader-text">Web feed</span>
+            <span class="screen-reader-text"
+                  i18n:translate="">Web feed</span>
           </a>
           </li>
         </ul>
@@ -56,18 +67,17 @@
       <button id="gs-group-type-announcement-posts-toolbar-next"
               aria-controls="gs-group-type-announcement-posts-latest"
               aria-flowto="gs-group-type-announcement-posts-toolbar-navigation"
-              class="btn gs-search-toolbar-next">Older</button>
+              class="btn gs-search-toolbar-next"
+              i18n:translate="">Older</button>
     </div><!--gs-group-type-announcement-posts-toolbar-->
   </div><!--id="gs-group-type-announcement-posts-search-->
   <div id="gs-group-type-announcement-posts-private"
        tal:condition="not:view/viewTopics">
-    <p>
+    <p i18n:translate="">
       You must be a logged in member of
-      <span class="group" tal:content="view/groupInfo/name">this group</span>
+      <span class="group" tal:content="view/groupInfo/name"
+            i18n:name="groupName">this group</span>
       to view the posts.
-      <!--a tal:attributes="href string:/login.html?came_from=${view/groupInfo/url}"
-        href="#"><strong>Login</strong> if you are already a
-        member.</a-->
     </p>
   </div><!--gs-group-type-announcement-posts-private-->
 </div><!--gs-group-type-announcement-posts-->
