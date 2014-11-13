@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+############################################################################
 #
 # Copyright © 2014 OnlineGroups.net and Contributors.
 # All Rights Reserved.
@@ -11,7 +11,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+############################################################################
 from __future__ import absolute_import, unicode_literals
 from zope.cachedescriptors.property import Lazy
 from gs.group.member.list.lists import AllMemberList
@@ -26,8 +26,8 @@ class AnnouncementAllMembersList(AllMemberList, GroupAdminViewlet):
     <https://redmine.iopen.net/issues/4076>'''
 
     def __init__(self, group, request, view, manager):
-        super(AnnouncementAllMembersList, self).__init__(group, request, view,
-                                                            manager)
+        super(AnnouncementAllMembersList, self).__init__(
+            group, request, view, manager)
 
     @Lazy
     def mailingList(self):
@@ -44,7 +44,7 @@ class AnnouncementAllMembersList(AllMemberList, GroupAdminViewlet):
     @Lazy
     def show(self):
         retval = ((not self.loggedInUser.anonymous)
-                    and ((self.loggedInUser.id in self.postingMembers)
-                            or (self.isAdmin)))
+                  and ((self.loggedInUser.id in self.postingMembers)
+                       or (self.isAdmin)))
         assert type(retval) == bool
         return retval

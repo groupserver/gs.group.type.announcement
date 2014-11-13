@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+############################################################################
 #
 # Copyright © 2013, 2014 OnlineGroups.net and Contributors.
 # All Rights Reserved.
@@ -11,7 +11,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+############################################################################
 from __future__ import absolute_import, unicode_literals
 from gs.group.member.canpost.rules import BaseRule
 
@@ -30,7 +30,8 @@ class PostingMember(BaseRule):
                 self.s['canPost'] = True
                 self.s['status'] = 'a posting member'
                 self.s['statusNum'] = 0
-            elif postingMembers and (self.userInfo.id not in postingMembers):
+            elif (postingMembers
+                  and (self.userInfo.id not in postingMembers)):
                 self.s['canPost'] = False
                 self.s['status'] = 'not a posting member'
                 self.s['statusNum'] = self.weight
@@ -42,5 +43,4 @@ class PostingMember(BaseRule):
 
         assert self.s['checked']
         assert type(self.s['canPost']) == bool
-        assert type(self.s['status']) == unicode
         assert type(self.s['statusNum']) == int

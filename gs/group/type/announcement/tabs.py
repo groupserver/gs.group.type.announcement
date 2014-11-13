@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+############################################################################
 #
 # Copyright © 2013 OnlineGroups.net and Contributors.
 # All Rights Reserved.
@@ -11,7 +11,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+############################################################################
 from zope.cachedescriptors.property import Lazy
 from zope.component import getMultiAdapter
 from gs.group.member.canpost.interfaces import IGSPostingUser
@@ -33,6 +33,6 @@ class PostsTab(UserInfoTab):
 
     @Lazy
     def canPost(self):
-        retval = getMultiAdapter((self.groupInfo.groupObj, self.loggedInUser),
-                                    IGSPostingUser)
+        retval = getMultiAdapter(
+            (self.groupInfo.groupObj, self.loggedInUser), IGSPostingUser)
         return retval
