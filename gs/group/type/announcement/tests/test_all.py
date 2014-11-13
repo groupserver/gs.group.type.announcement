@@ -14,9 +14,9 @@
 ############################################################################
 from __future__ import absolute_import, unicode_literals
 from unittest import TestSuite, main as unittest_main
-from gs.group.type.announcement.tests.canpostrules import \
-    TestCanPost
-testCases = (TestCanPost, )
+from gs.group.type.announcement.tests.canpostrules import TestCanPost
+from gs.group.type.announcement.tests.set import TestSet
+testCases = (TestCanPost, TestSet, )
 
 
 def load_tests(loader, tests, pattern):
