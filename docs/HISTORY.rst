@@ -1,6 +1,15 @@
 Changelog
 =========
 
+4.1.0 (2014-11-13)
+------------------
+
+* Setting the group administrators to be the posting members by
+  default
+* Added unit tests for the ``PostingMembers`` can-post rule
+* Added unit tests for the set and unset classes
+
+
 4.0.1 (2014-09-17)
 ------------------
 
