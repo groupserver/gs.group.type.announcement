@@ -15,7 +15,10 @@
 from __future__ import absolute_import, unicode_literals
 from mock import MagicMock, patch
 from unittest import TestCase
-from gs.group.type.announcement.set import SetAnnouncementGroup, INTERFACES
+from gs.group.type.announcement.set import (
+    SetAnnouncementGroup, UnsetAnnouncementGroup, INTERFACES)
+REPLYTO = b'replyto'
+POSTING_MEMBERS = b'posting_members'
 
 
 class TestSet(TestCase):
@@ -33,8 +36,7 @@ class TestSet(TestCase):
         sag = SetAnnouncementGroup(g)
         sag.set_admins_as_posting_members()
 
-        sli.assert_called_once_with('posting_members',
-                                    [a.id for a in admins])
+        sli.assert_called_once_with(POSTING_MEMBERS, [a.id for a in admins])
 
     @patch.object(SetAnnouncementGroup, 'set_admins_as_posting_members')
     def test_set_default_posting_members_no_property(self, sa):
@@ -47,7 +49,7 @@ class TestSet(TestCase):
         sag = SetAnnouncementGroup(g)
         sag.set_default_posting_members()
 
-        self.assertEqual(1, sa.call_count)
+        sa.assert_called_once_with()
 
     @patch.object(SetAnnouncementGroup, 'set_admins_as_posting_members')
     def test_set_default_posting_members_property(self, sa):
@@ -73,5 +75,19 @@ exists'''
         sag = SetAnnouncementGroup(g)
         sag.set()
 
-        slp.assert_called_once_with('replyto', 'sender')
+        slp.assert_called_once_with(REPLYTO, 'sender')
         am.assert_called_once_with(g, INTERFACES)
+        sdpm.assert_called_once_with()
+
+
+class TestUnset(TestCase):
+    @patch.object(UnsetAnnouncementGroup, 'del_marker')
+    @patch.object(UnsetAnnouncementGroup, 'del_list_property')
+    def test_unset(self, dlp, dm):
+        g = MagicMock()
+
+        uag = UnsetAnnouncementGroup(g)
+        uag.unset()
+
+        dlp.assert_called_once_with(REPLYTO)
+        dm.assert_called_once_with(g, INTERFACES)

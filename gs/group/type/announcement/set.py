@@ -26,7 +26,7 @@ class SetAnnouncementGroup(SetABC):
 
     def set(self):
         self.set_marker()
-        self.set_list_property('replyto', 'sender')
+        self.set_list_property(b'replyto', 'sender')
         self.set_default_posting_members()
 
     def set_marker(self):
@@ -38,14 +38,14 @@ class SetAnnouncementGroup(SetABC):
         siteRoot = self.group.site_root()
         listManager = getattr(siteRoot, 'ListManager')
         mailingList = getattr(listManager, self.group.getId())
-        if not mailingList.hasProperty('posting_members'):
+        if not mailingList.hasProperty(b'posting_members'):
             self.set_admins_as_posting_members()
 
     def set_admins_as_posting_members(self):
         groupInfo = IGSGroupInfo(self.group)
         admins = [a.id for a in groupInfo.group_admins]
         if admins:
-            self.set_list_property('posting_members', admins)
+            self.set_list_property(b'posting_members', admins)
 
 
 class UnsetAnnouncementGroup(UnsetABC):
@@ -54,7 +54,7 @@ class UnsetAnnouncementGroup(UnsetABC):
 
     def unset(self):
         self.unset_marker()
-        self.del_list_property('replyto')
+        self.del_list_property(b'replyto')
         # Leave the posting_members property alone
 
     def unset_marker(self):
