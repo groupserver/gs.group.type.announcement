@@ -1,6 +1,13 @@
 Changelog
 =========
 
+4.1.1 (2015-04-28)
+------------------
+
+* Removing ``role="application"``, closing `Bug 4156`_
+
+.. _Bug 4156: https://redmine.iopen.net/issues/4156
+
 4.1.0 (2014-11-13)
 ------------------
 
@@ -91,3 +98,5 @@ Changelog
 * Made an announcement group a subclass of a discussion group
 * Hid the standard *Topics* tab and the *Posts* tab
 * Added a new *Posts* tab
+
+..  LocalWords:  Changelog
