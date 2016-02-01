@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ############################################################################
 #
-# Copyright © 2012, 2013, 2014 OnlineGroups.net and Contributors.
+# Copyright © 2012, 2013, 2014, 2016 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -17,6 +17,7 @@ import os
 from setuptools import setup, find_packages
 from version import get_version
 
+name = 'gs.group.type.announcement'
 version = get_version()
 
 with codecs.open('README.rst', encoding='utf-8') as f:
@@ -24,9 +25,6 @@ with codecs.open('README.rst', encoding='utf-8') as f:
 with codecs.open(os.path.join("docs", "HISTORY.rst"),
                  encoding='utf-8') as f:
     long_description += '\n' + f.read()
-
-name = 'gs.group.type.announcement'
-url = 'https://source.iopen.net/groupserver/{0}/'.format(name)
 
 setup(name=name,
       version=version,
@@ -46,10 +44,11 @@ setup(name=name,
       keywords='group, announcement, posts, topics, canpost',
       author='Michael JasonSmith',
       author_email='mpj17@onlinegroups.net',
-      url=url,
+      url='https://github.com/groupserver/{0}/'.format(name),
       license='ZPL 2.1',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['gs', 'gs.group', 'gs.group.type', ],
+      namespace_packages=['.'.join(name.split('.')[:i])
+                          for i in range(1, len(name.split('.')))],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
@@ -71,7 +70,7 @@ setup(name=name,
           'gs.group.type.set',
           'Products.GSGroup',
       ],
-      test_suite="gs.group.type.announcement.tests.test_all",
+      test_suite="{0}.tests.test_all".format(name),
       tests_require=['mock', ],
       entry_points="""
           # -*- Entry points: -*-
