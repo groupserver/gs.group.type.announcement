@@ -12,7 +12,7 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ############################################################################
-from __future__ import absolute_import, unicode_literals
+from __future__ import absolute_import, unicode_literals, print_function
 from zope.cachedescriptors.property import Lazy
 from gs.group.member.list.lists import AllMemberList
 from gs.group.member.viewlet import GroupAdminViewlet
@@ -46,5 +46,5 @@ class AnnouncementAllMembersList(AllMemberList, GroupAdminViewlet):
         retval = ((not self.loggedInUser.anonymous)
                   and ((self.loggedInUser.id in self.postingMembers)
                        or (self.isAdmin)))
-        assert type(retval) == bool
+        assert type(retval) == bool, 'Returning a {0}, rather than a bool'.format(type(retval))
         return retval

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ############################################################################
 #
-# Copyright © 2013, 2014 OnlineGroups.net and Contributors.
+# Copyright © 2013, 2014, 2016 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -15,8 +15,9 @@
 from __future__ import absolute_import, unicode_literals
 from unittest import TestSuite, main as unittest_main
 from gs.group.type.announcement.tests.canpostrules import TestCanPost
-from gs.group.type.announcement.tests.set import TestSet, TestUnset
-testCases = (TestCanPost, TestSet, TestUnset, )
+from gs.group.type.announcement.tests.set import (TestSet, TestUnset)
+from gs.group.type.announcement.tests.members import TestAnnouncementAllMembersList
+testCases = (TestCanPost, TestSet, TestUnset, TestAnnouncementAllMembersList, )
 
 
 def load_tests(loader, tests, pattern):
