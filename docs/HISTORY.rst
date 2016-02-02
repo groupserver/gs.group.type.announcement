@@ -1,6 +1,18 @@
 Changelog
 =========
 
+4.1.2 (2016-02-02)
+------------------
+
+* Following the update to `gs.search.base`_
+* Updating the JavaScript that loads the *Posts* tab so it passes
+  the `Google Closure Linter`_
+* Adding to the unit tests
+
+.. _gs.search.base: https://github.com/groupserver/gs.search.base
+.. _Google Closure Linter:
+   https://developers.google.com/closure/utilities/
+
 4.1.1 (2015-04-28)
 ------------------
 
@@ -23,7 +35,8 @@ Changelog
 * Naming the reStructuredText files as such
 * Switching the primary repository to GitHub_
 
-.. _GitHub: https://github.com/groupserver/gs.group.type.announcement
+.. _GitHub:
+   https://github.com/groupserver/gs.group.type.announcement
 
 4.0.0 (2014-07-21)
 ------------------
