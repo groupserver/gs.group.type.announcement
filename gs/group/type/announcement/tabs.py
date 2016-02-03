@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ############################################################################
 #
-# Copyright © 2013 OnlineGroups.net and Contributors.
+# Copyright © 2013, 2016 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -16,7 +16,7 @@ from zope.cachedescriptors.property import Lazy
 from zope.component import getMultiAdapter
 from gs.group.member.canpost.interfaces import IGSPostingUser
 from gs.group.home.simpletab import PublicTab, UserInfoTab
-
+from . import GSMessageFactory as _
 
 class DoNothing(PublicTab):
     def __init__(self, group, request, view, manager):
@@ -28,6 +28,7 @@ class DoNothing(PublicTab):
 
 
 class PostsTab(UserInfoTab):
+    title = _('posts-tab-title', 'Posts')
     def __init__(self, group, request, view, manager):
         super(PostsTab, self).__init__(group, request, view, manager)
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ############################################################################
 #
-# Copyright © 2014 OnlineGroups.net and Contributors.
+# Copyright © 2014, 2016 OnlineGroups.net and Contributors.
 # All Rights Reserved.
 #
 # This software is subject to the provisions of the Zope Public License,
@@ -12,15 +12,17 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ############################################################################
-from __future__ import absolute_import, unicode_literals
+from __future__ import absolute_import, unicode_literals, print_function
 from gs.group.type.set import (SetABC, UnsetABC)
 from Products.GSGroup.interfaces import IGSGroupInfo
+from . import GSMessageFactory as _
 INTERFACES = ['gs.group.type.announcement.interfaces.IGSAnnouncementGroup']
 
 
 class SetAnnouncementGroup(SetABC):
     'Set a group folder to be an announcement group'
-    name = 'Announcement group: only \u2018posting members\u2019 can post'
+    name = _('announcement-group-name-description',
+             'Announcement group: only \u2018posting members\u2019 can post')
     weight = 20
     show = True
 
@@ -49,7 +51,7 @@ class SetAnnouncementGroup(SetABC):
 
 
 class UnsetAnnouncementGroup(UnsetABC):
-    name = 'Announcement group'
+    name = _('announcement-group', 'Announcement group')
     setTypeId = 'gs-group-type-announcement-set'
 
     def unset(self):

@@ -13,19 +13,21 @@
         <input type="search" name="s" placeholder="Search within posts&#8230;"
                autocomplete="on" value="" title="Search within posts"
                id="gs-group-type-announcement-posts-search-input"
-               i18n:attributes="placeholder; title"/>
+               i18n:attributes="placeholder search-area-search-placeholder;
+                                title search-area-search-title"/>
         <button id="gs-group-type-announcement-posts-search-button"
-                class="btn" i18n:translate="">Search</button>
+                class="btn"
+                i18n:translate="search-area-search-button">Search</button>
       </div><!--gs-search-entry-->
       <a id="gs-group-type-announcement-posts-form-new-topic" class="btn"
          tal:condition="view/canPost/canPost"
          href="messages/newTopic.html"
-         i18n:translate=""><span i18n:translate="new-icon"
-                                 class="muted">&#10010;</span>
-           <strong>New post</strong></a>
+         i18n:translate="search-area-new-post"><span i18n:name="new-icon"
+                                                     class="muted">&#10010;</span>
+           <b>New post</b></a>
     </div><!--gs-group-type-announcement-posts-search-form-->
     <p id="gs-group-type-announcement-posts-loading"
-      class="gs-search-loading" i18n:translate="">
+      class="gs-search-loading" i18n:translate="search-area-loading-message">
       <span data-icon="&#xe619;" aria-hidden="true" class="loading"
             i18n:name="loading-icon"> </span>
       Loading the posts&#8230;
@@ -34,10 +36,10 @@
       class="items-list gs-search-results">
       &#160;
     </div><!--gs-group-type-announcement-posts-latest-->
-    <p class="gs-search-failed" i18n:translate="">
+    <p class="gs-search-failed" i18n:translate="search-area-no-posts-found">
       No posts were found.
     </p><!--gs-search-failed-->
-    <p class="gs-search-empty muted" i18n:translate="">
+    <p class="gs-search-empty muted" i18n:translate="search-area-no-posts-yet">
       People are yet to post to this group.
     </p><!--gs-search-empty-->
     <div id="gs-group-type-announcement-posts-toolbar" role="toolbar"
@@ -46,19 +48,19 @@
               aria-controls="gs-group-type-announcement-posts-latest"
               aria-flowto="gs-group-type-announcement-posts-toolbar-next"
               class="btn gs-search-toolbar-previous"
-              i18n:translate="">Newer</button>
+              i18n:translate="search-area-newer-posts-button">Newer</button>
       <div id="gs-group-type-announcement-posts-toolbar-navigation"
            role="navigation">
         <ul class="dotted-inline-list">
           <li><a href="messages/posts.html"
-                 i18n:translate="">All posts</a></li>
+                 i18n:translate="search-area-all-posts-link">All posts</a></li>
           <li><a type="application/atom+xml" class="alternateATOM"
                  tal:define="title string:Posts in ${view/groupInfo/name};
                              url string:/s/search.atom?t=0&amp;f=0&amp;p=1&amp;g=${view/groupInfo/id}"
                  tal:attributes="href url" href="#">
             <span aria-hidden="true" data-icon="&#xe003;"></span>
             <span class="screen-reader-text"
-                  i18n:translate="">Web feed</span>
+                  i18n:translate="search-area-feed-link">Web feed</span>
           </a>
           </li>
         </ul>
@@ -67,12 +69,12 @@
               aria-controls="gs-group-type-announcement-posts-latest"
               aria-flowto="gs-group-type-announcement-posts-toolbar-navigation"
               class="btn gs-search-toolbar-next"
-              i18n:translate="">Older</button>
+              i18n:translate="search-area-older-posts-button">Older</button>
     </div><!--gs-group-type-announcement-posts-toolbar-->
   </div><!--id="gs-group-type-announcement-posts-search-->
   <div id="gs-group-type-announcement-posts-private"
        tal:condition="not:view/viewTopics">
-    <p i18n:translate="">
+    <p i18n:translate="search-area-anon-message">
       You must be a logged in member of
       <span class="group" tal:content="view/groupInfo/name"
             i18n:name="groupName">this group</span>

@@ -5,7 +5,7 @@
   <div id="gs-group-type-announcement-members-all-admins" role="region"
        aria-labelledby="gs-group-type-announcement-members-all-admins-h">
     <h2 id="gs-group-type-announcement-members-all-admins-h"
-        i18n:translate="">Administrators</h2>
+        i18n:translate="members-admin-title">Administrators</h2>
     <ul>
       <tal:block repeat="member view/admins">
         <li class="vcard">
@@ -30,7 +30,7 @@
   <div id="gs-group-type-announcement-members-all-normal" role="region"
        aria-labelledby="gs-group-type-announcement-members-all-normal-h">
     <h2 id="gs-group-type-announcement-members-all-normal-h"
-        i18n:translate="">Normal members</h2>
+        i18n:translate="members-normal-title">Normal members</h2>
     <ul tal:condition="python:view.isMember or view.visibility.isPublic">
       <tal:block repeat="member view/normalMembers">
         <li class="vcard">
@@ -48,7 +48,7 @@
       </tal:block>
     </ul>
     <p tal:condition="python:not(view.isMember or view.visibility.isPublic)"
-       i18n:translate="">
+       i18n:translate="members-anon-message">
       You must be logged in to see the list of normal group members.
     </p>
   </div><!--gs-group-type-announcement-members-all-normal-->
@@ -56,8 +56,8 @@
        aria-labelledby="gs-group-type-announcement-members-all-invited-h"
        tal:condition="python:not(view.visibility.isPublic) and view.isMember">
     <h2 id="gs-group-type-announcement-members-all-invited-h"
-        i18n:translate="">Invited members</h2>
-    <p class="muted" i18n:translate="">
+        i18n:translate="members-no-members-title">Invited members</h2>
+    <p class="muted" i18n:translate="members-no-members-message">
       The people that are yet to respond to the invitation to join
       <span class="group" i18n:name="groupName"
             tal:content="view/groupInfo/name">this group</span>.

@@ -16,8 +16,10 @@
            i18n_domain="gs.group.type.announcement">
 
   <include package="zope.viewlet" file="meta.zcml" />
+  <i18n:registerTranslations directory="locales" />
 
-  <interface interface=".interfaces.IGSAnnouncementGroup"
+  <interface
+    interface=".interfaces.IGSAnnouncementGroup"
     type="zope.app.content.interfaces.IContentType" />
   <adapter
     name="Posting Member"
@@ -25,7 +27,8 @@
       .interfaces.IGSAnnouncementGroup"
     provides="gs.group.member.canpost.interfaces.IGSCanPostRule"
     factory=".canpostrules.PostingMember"  />
-  <browser:viewlet name="gs-group-type-announcement-not-a-posting-member"
+  <browser:viewlet
+    name="gs-group-type-announcement-not-a-posting-member"
     for=".interfaces.IGSAnnouncementGroup"
     manager="gs.group.member.canpost.interfaces.ICanPostInfo"
     template="browser/templates/notapostingmember.pt"
@@ -51,7 +54,8 @@
     weight="10"
     title="Topics" />
   <!-- Hide the Posts tab -->
-  <browser:viewlet name="gs-group-messages-posts-tab"
+  <browser:viewlet
+    name="gs-group-messages-posts-tab"
     for=".interfaces.IGSAnnouncementGroup"
     manager="gs.group.messages.base.interfaces.IGroupHomepageMessages"
     class=".tabs.DoNothing"
@@ -75,8 +79,7 @@
     class=".tabs.PostsTab"
     template="browser/templates/poststab.pt"
     permission="zope2.View"
-    weight="10"
-    title="Posts" />
+    weight="10" />
   <browser:viewlet name="gs-group-type-announcement-posts-script"
     for=".interfaces.IGSAnnouncementGroup"
     manager="gs.group.home.interfaces.IGroupHomepageScripts"

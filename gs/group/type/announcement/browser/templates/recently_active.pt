@@ -5,12 +5,12 @@
      id="gs-group-type-announcement-active" role="navigation"
      aria-labelledby="gs-group-type-announcement-active-h">
   <h3 id="gs-group-type-announcement-active-h"
-      i18n:translate="">Recently active</h3>
+      i18n:translate="active-members-area-title">Recently active</h3>
   <div id="gs-group-member-active-ajax-hole" style="display:none;">
     &#160;
   </div><!--gs-group-member-active-ajax-hole-->
   <p id="gs-group-member-active-loading" class="gs-search-loading"
-     role="status" i18n:translate="">
+     role="status" i18n:translate="active-members-area-loading-message">
     <span data-icon="&#xe619;" aria-hidden="true" class="loading"
           i18n:name="loading-icon"> </span>
     Loading the list of  active members&#8230;
@@ -18,12 +18,13 @@
   <ul id="gs-group-member-active-stats" class="dotted-inline-list">
     <li>
       <a tal:attributes="href string:${view/groupInfo/relative_url}/stats.html"
-         href="stats.html" i18n:translate="">Posting statistics</a>
+         href="stats.html"
+         i18n:translate="active-members-area-stats-link">Posting statistics</a>
     </li>
     <li>
-      <a i18n:translate=""
-        tal:attributes="href string:${view/groupInfo/relative_url}/members.html"
-         href="log.html">Membership</a>
+      <a href="log.html"
+         tal:attributes="href string:${view/groupInfo/relative_url}/members.html"
+         i18n:translate="active-members-area-members-link">Membership</a>
     </li>
   </ul><!--gs-group-member-active-stats-->
 </div><!--gs-group-type-announcement-active-->

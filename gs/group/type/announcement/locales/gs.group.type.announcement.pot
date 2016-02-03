@@ -1,0 +1,144 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-02-03 04:18+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: gs.group.type.announcement\n"
+
+#. Default: "${loading-icon} Loading the list of active members…"
+#: ./browser/templates/recently_active.pt:14
+msgid "active-members-area-loading-message"
+msgstr ""
+
+#. Default: "Membership"
+#: ./browser/templates/recently_active.pt:25
+msgid "active-members-area-members-link"
+msgstr ""
+
+#. Default: "Posting statistics"
+#: ./browser/templates/recently_active.pt:20
+msgid "active-members-area-stats-link"
+msgstr ""
+
+#. Default: "Recently active"
+#: ./browser/templates/recently_active.pt:7
+msgid "active-members-area-title"
+msgstr ""
+
+#. Default: "Announcement group"
+#: ./set.py:54
+msgid "announcement-group"
+msgstr ""
+
+#. Default: "Announcement group: only \u2018posting members\u2019 can post"
+#: ./set.py:24
+msgid "announcement-group-name-description"
+msgstr ""
+
+#. Default: "<b>You cannot post</b> because you are not a posting member of this announcement group. Contact the manager of the group to discuss how to become a posting member of ${groupName}."
+#: ./browser/templates/notapostingmember.pt:13
+msgid "cannot-post"
+msgstr ""
+
+#. Default: "Administrators"
+#: ./browser/templates/all.pt:7
+msgid "members-admin-title"
+msgstr ""
+
+#. Default: "You must be logged in to see the list of normal group members."
+#: ./browser/templates/all.pt:50
+msgid "members-anon-message"
+msgstr ""
+
+#. Default: "The people that are yet to respond to the invitation to join ${groupName}."
+#: ./browser/templates/all.pt:62
+msgid "members-no-members-message"
+msgstr ""
+
+#. Default: "Invited members"
+#: ./browser/templates/all.pt:58
+msgid "members-no-members-title"
+msgstr ""
+
+#. Default: "Normal members"
+#: ./browser/templates/all.pt:32
+msgid "members-normal-title"
+msgstr ""
+
+#. Default: "Posts"
+#: ./tabs.py:31
+msgid "posts-tab-title"
+msgstr ""
+
+#. Default: "All posts"
+#: ./browser/templates/poststab.pt:55
+msgid "search-area-all-posts-link"
+msgstr ""
+
+#. Default: "You must be a logged in member of ${groupName} to view the posts."
+#: ./browser/templates/poststab.pt:79
+msgid "search-area-anon-message"
+msgstr ""
+
+#. Default: "Web feed"
+#: ./browser/templates/poststab.pt:62
+msgid "search-area-feed-link"
+msgstr ""
+
+#. Default: "${loading-icon} Loading the posts…"
+#: ./browser/templates/poststab.pt:31
+msgid "search-area-loading-message"
+msgstr ""
+
+#. Default: "${new-icon} <b>New post</b>"
+#: ./browser/templates/poststab.pt:25
+msgid "search-area-new-post"
+msgstr ""
+
+#. Default: "Newer"
+#: ./browser/templates/poststab.pt:47
+msgid "search-area-newer-posts-button"
+msgstr ""
+
+#. Default: "No posts were found."
+#: ./browser/templates/poststab.pt:39
+msgid "search-area-no-posts-found"
+msgstr ""
+
+#. Default: "People are yet to post to this group."
+#: ./browser/templates/poststab.pt:42
+msgid "search-area-no-posts-yet"
+msgstr ""
+
+#. Default: "Older"
+#: ./browser/templates/poststab.pt:68
+msgid "search-area-older-posts-button"
+msgstr ""
+
+#. Default: "Search"
+#: ./browser/templates/poststab.pt:18
+msgid "search-area-search-button"
+msgstr ""
+
+#. Default: "Search within posts…"
+#: ./browser/templates/poststab.pt:13
+msgid "search-area-search-placeholder"
+msgstr ""
+
+#. Default: "Search within posts"
+#: ./browser/templates/poststab.pt:13
+msgid "search-area-search-title"
+msgstr ""
+

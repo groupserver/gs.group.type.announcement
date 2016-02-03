@@ -4,13 +4,12 @@
      i18n:domain="gs.group.type.announcement"
      id="gs-group-type-announcement-not-a-posting-member"
      class="gs-group-member-canpost-info"
-     i18n:translate="">
-  <strong
-    tal:attributes="title string:Reason ${view/canPost/statusNum}">You
-    cannot post</strong>
+     tal:attributes="title string:Reason ${view/canPost/statusNum}"
+     title="Reason -1">
+  <span i18n:translate="cannot-post"><b>You cannot post</b>
   because you are not a posting member of this announcement group.
   Contact the manager of the group to discuss how to become a posting
   member of
   <span class="group" i18n:name="groupName"
-    tal:content="view/groupInfo/name">this group</span>.
+    tal:content="view/groupInfo/name">this group</span>.</span>
 </div><!--gs-group-type-announcement-not-a-posting-member-->
