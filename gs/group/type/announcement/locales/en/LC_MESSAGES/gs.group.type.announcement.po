@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2016-02-03 04:18+0000\n"
-"PO-Revision-Date: 2016-02-02 20:23-0800\n"
+"PO-Revision-Date: 2016-02-02 20:53-0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -112,7 +112,7 @@ msgstr "Newer"
 #. Default: "No posts were found."
 #: ./browser/templates/poststab.pt:39
 msgid "search-area-no-posts-found"
-msgstr ""
+msgstr "No posts were found."
 
 #. Default: "People are yet to post to this group."
 #: ./browser/templates/poststab.pt:42
