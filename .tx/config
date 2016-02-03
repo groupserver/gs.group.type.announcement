@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[gs-group-type-announcement.gs-group-type-announcement-pot]
+file_filter = gs/group/type/announcement/locales/<lang>/LC_MESSAGES/gs.group.type.announcement.po
+source_file = gs/group/type/announcement/locales/en/LC_MESSAGES/gs.group.type.announcement.po
+source_lang = en
+type = PO
+

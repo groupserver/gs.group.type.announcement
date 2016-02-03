@@ -75,8 +75,12 @@ inheritance tree::
 Resources
 =========
 
-- Code repository: https://github.com/groupserver/gs.group.type.announcement
-- Questions and comments to http://groupserver.org/groups/development
+- Translations:
+  https://www.transifex.com/groupserver/gs-group-type-announcement/
+- Code repository:
+  https://github.com/groupserver/gs.group.type.announcement
+- Questions and comments to
+  http://groupserver.org/groups/development
 - Report bugs at https://redmine.iopen.net/projects/groupserver
 
 .. [#canpost] See ``gs.group.member.canpost`` for more
